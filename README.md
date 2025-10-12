@@ -3,7 +3,7 @@
 A pixel-perfect, deploy-ready clone of the Canoply template, built with modern technologies.
 Includes a responsive homepage with Hero, Features, CTA, Header, Footer, and additional sections like FAQ, Blog, Location, and Reviews.
 
-Built with:
+# Built with:
 
 Next.js 15 (App Router)
 
@@ -13,11 +13,11 @@ Framer Motion (smooth animations)
 
 Responsive design (mobile, tablet, desktop)
 
-🌐 Live Demo
+# 🌐 Live Demo
 
 https://canoply-clone.vercel.app/
 
-📦 Components & Sections
+# 📦 Components & Sections
 
 Header – Navigation menu, logo, responsive layout
 
@@ -37,7 +37,7 @@ Reviews – Testimonials or customer reviews
 
 Footer – Links, social media, and copyright
 
-⚡ How to Run Locally
+# ⚡ How to Run Locally
 
 Clone the repository:
 
@@ -59,7 +59,7 @@ Open your browser:
 
 http://localhost:3000
 
-📝 Features & Highlights
+# 📝 Features & Highlights
 
 Fully responsive and mobile-first design
 
@@ -73,7 +73,7 @@ Easily deployable on Vercel for a live demo
 
 Supports customization of assets in /public (SVGs, images, icons)
 
-🚀 Deployment
+# 🚀 Deployment
 
 Deployed on Vercel: https://canoply-clone.vercel.app/
 
@@ -83,9 +83,12 @@ Build command: npm run build
 
 Output directory: .next
 
-🔧 Tech Stack
+# Tech Stack
 Layer	Technology
 Frontend	Next.js, React
 Styling	Tailwind CSS
 Animations	Framer Motion
 Deployment	Vercel
+
+# Author
+Mohd Mudabbir Arafat
