@@ -1,5 +1,7 @@
 # Canoply Clone (Next.js + Tailwind)
 
+[![CI](https://github.com/Mudabbirarafat/canoply-clone/actions/workflows/ci.yml/badge.svg)](https://github.com/Mudabbirarafat/canoply-clone/actions/workflows/ci.yml)
+
 A pixel-perfect, deploy-ready clone of the Canoply template, built with modern technologies.
 Includes a responsive homepage with Hero, Features, CTA, Header, Footer, and additional sections like FAQ, Blog, Location, and Reviews.
 
