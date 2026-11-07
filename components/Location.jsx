@@ -18,7 +18,7 @@ export default function Location() {
             </span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Nestled in the heart of Canada's mountain hills, Canoply offers the perfect escape from city life
+            Above the Tirthan river in Himachal Pradesh — three hours from Kullu, and a world away from it
           </p>
         </motion.div>
 
@@ -31,11 +31,11 @@ export default function Location() {
           >
             <div className="space-y-8">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold text-white mb-4">📍 Mountain Hills, Canada</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">📍 Gushaini, Tirthan Valley</h3>
                 <p className="text-slate-300 leading-relaxed">
-                  Located in the pristine mountain hills of Canada, our cabins offer breathtaking views and 
-                  unparalleled access to nature. Just 20 minutes from the nearest town, you'll have the perfect 
-                  balance of seclusion and convenience.
+                  Set on a forested slope above the Tirthan, the cabin looks across the valley to the
+                  ridge beyond. Banjar and its market are twenty-five minutes down the road, and the
+                  buffer zone of the Great Himalayan National Park begins a short walk from the gate.
                 </p>
               </div>
 
@@ -47,7 +47,7 @@ export default function Location() {
                 >
                   <div className="text-3xl mb-3">🚗</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Easy Access</h4>
-                  <p className="text-slate-300 text-sm">20 minutes from town center</p>
+                  <p className="text-slate-300 text-sm">25 minutes from Banjar</p>
                 </motion.div>
 
                 <motion.div 
@@ -57,7 +57,7 @@ export default function Location() {
                 >
                   <div className="text-3xl mb-3">🏔️</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Mountain Views</h4>
-                  <p className="text-slate-300 text-sm">360° panoramic views</p>
+                  <p className="text-slate-300 text-sm">Across the valley to the ridge</p>
                 </motion.div>
 
                 <motion.div 
@@ -67,7 +67,7 @@ export default function Location() {
                 >
                   <div className="text-3xl mb-3">🌲</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Nature Trails</h4>
-                  <p className="text-slate-300 text-sm">Direct access to hiking trails</p>
+                  <p className="text-slate-300 text-sm">Into the national park buffer</p>
                 </motion.div>
 
                 <motion.div 
@@ -77,7 +77,7 @@ export default function Location() {
                 >
                   <div className="text-3xl mb-3">🛒</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Nearby Amenities</h4>
-                  <p className="text-slate-300 text-sm">Grocery stores and restaurants</p>
+                  <p className="text-slate-300 text-sm">Market, bank and bus stand</p>
                 </motion.div>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function Location() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Mountain landscape view from Canoply location"
+                alt="The Tirthan valley seen from the cabin"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>

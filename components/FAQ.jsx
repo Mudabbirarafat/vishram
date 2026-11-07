@@ -129,29 +129,39 @@ export default function FAQ() {
         </motion.div>
 
         {/* FAQ Items */}
-        <motion.div 
-          className="space-y-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <AnimatePresence mode="wait">
+        {/* mode="wait" is a single-child mode: it holds the incoming child
+            back until the outgoing one has finished leaving. It was wrapped
+            around a .map() of five answers, which is what the console
+            warning about animating multiple children inside it meant, and
+            why switching tabs flickered. One keyed wrapper per tab is the
+            shape the mode expects - the whole list leaves, then the whole
+            next list arrives. */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            className="space-y-4"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
+          >
             {faqData[activeTab].map((item, index) => (
-              <motion.div 
-                key={`${activeTab}-${item.id}`}
+              <motion.div
+                key={item.id}
                 className="bg-white rounded-2xl border border-gray-200 overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.06 }}
               >
                 <motion.button
                   onClick={() => toggleItem(item.id)}
+                  aria-expanded={Boolean(openItems[item.id])}
                   className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                   whileHover={{ backgroundColor: '#f9fafb' }}
                 >
                   <h3 className="font-semibold text-gray-900 pr-4">{item.question}</h3>
-                  <motion.span 
+                  <motion.span
+                    aria-hidden="true"
                     className="text-gray-500"
                     animate={{ rotate: openItems[item.id] ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -159,9 +169,11 @@ export default function FAQ() {
                     ▼
                   </motion.span>
                 </motion.button>
-                <AnimatePresence>
+                {/* initial={false} so an answer already open when the tab
+                    mounts does not replay its own opening animation. */}
+                <AnimatePresence initial={false}>
                   {openItems[item.id] && (
-                    <motion.div 
+                    <motion.div
                       className="px-6 pb-4"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
@@ -174,8 +186,8 @@ export default function FAQ() {
                 </AnimatePresence>
               </motion.div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   )

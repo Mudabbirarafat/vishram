@@ -5,32 +5,36 @@ import { motion, AnimatePresence } from 'framer-motion'
 export default function AdvancedMenu({ isOpen, onClose }) {
   const [activeSection, setActiveSection] = useState(null)
 
+  // Every id here has to exist on the page, because clicking one scrolls to
+  // getElementById(id) and nothing else. Three of these used to point at
+  // sections that were never built - About, Gallery and Contact - so a third
+  // of the menu waited 800ms and then just closed again. The ones that had
+  // nowhere to go are gone, FAQ and the booking form were missing and are
+  // now here, and Gallery points at the cabin photograph it was named for.
   const menuItems = [
-    { id: 'home', title: 'Home', subtitle: 'Welcome to Canoply', icon: '🏠' },
-    { id: 'location', title: 'Location', subtitle: 'Mountain Hills, Canada', icon: '📍' },
+    { id: 'home', title: 'Home', subtitle: 'Welcome to Vishram', icon: '🏠' },
+    { id: 'gallery', title: 'The cabin', subtitle: 'See the place', icon: '📸' },
+    { id: 'location', title: 'Location', subtitle: 'Tirthan Valley, Himachal', icon: '📍' },
     { id: 'reviews', title: 'Reviews', subtitle: 'What guests say', icon: '⭐' },
-    { id: 'about', title: 'About', subtitle: 'Our story', icon: '🏔️' },
-    { id: 'gallery', title: 'Gallery', subtitle: 'See our cabins', icon: '📸' },
-    { id: 'blog', title: 'Blog', subtitle: 'Local adventures', icon: '📝' },
-    { id: 'contact', title: 'Contact', subtitle: 'Get in touch', icon: '💬' },
+    { id: 'faq', title: 'Questions', subtitle: 'Before you book', icon: '❓' },
+    { id: 'blog', title: 'Journal', subtitle: 'Notes from the valley', icon: '📝' },
+    { id: 'booking', title: 'Book a stay', subtitle: 'Pick your dates', icon: '🗓️' },
   ]
 
   const handleItemClick = (itemId) => {
     setActiveSection(itemId)
-    
-    // Scroll to section
+
     const element = document.getElementById(itemId)
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      })
-    }
-    
-    // Close menu after scroll
-    setTimeout(() => {
+    if (!element) {
+      // Should not happen now that the list above is checked against the
+      // page, but waiting 800ms to close a menu that is going nowhere is
+      // the exact behaviour this is here to avoid repeating.
       onClose()
-    }, 800)
+      return
+    }
+
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setTimeout(onClose, 800)
   }
 
   return (
@@ -78,7 +82,7 @@ export default function AdvancedMenu({ isOpen, onClose }) {
                 >
                   <h2 className="text-4xl lg:text-6xl font-black mb-4">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
-                      Canoply
+                      Vishram
                     </span>
                   </h2>
                   <p className="text-slate-300 text-lg">Choose your destination</p>
