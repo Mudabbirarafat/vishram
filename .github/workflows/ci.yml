@@ -13,7 +13,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       # MERN repos often keep client/ and server/ packages instead of a root
       # one, so every package.json found (max depth 2) is built in turn.
