@@ -6,7 +6,7 @@ A booking site for a cabin in Tirthan Valley, Himachal Pradesh. Next.js 15 App
 Router, Tailwind, Framer Motion, and an API that actually decides whether a
 booking is valid.
 
-**Live: [vishram.vercel.app](https://vishram.vercel.app)**
+**Live: [vishram-tirthan.vercel.app](https://vishram-tirthan.vercel.app)**
 
 It is a demonstration project. The cabin is not real and nothing is for sale.
 

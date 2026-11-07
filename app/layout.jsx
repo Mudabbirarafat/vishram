@@ -5,7 +5,10 @@ import './globals.css'
 // made, shown to people looking for somewhere to stay. There were also no
 // social tags, so the link pasted into a message as a bare URL.
 export const metadata = {
-  metadataBase: new URL('https://vishram.vercel.app'),
+  // vishram-tirthan, not vishram: vishram.vercel.app is already taken by
+  // somebody else's app, and pointing metadataBase at it would hand every
+  // relative URL on this site to a stranger's domain.
+  metadataBase: new URL('https://vishram-tirthan.vercel.app'),
   title: {
     default: 'Vishram — a cabin in Tirthan Valley',
     template: '%s',
